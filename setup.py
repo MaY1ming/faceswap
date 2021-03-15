@@ -228,7 +228,8 @@ class Environment():
         retval = dict()
         for pkg in installed:
             item = pkg.split(" ")
-            retval[item[0]] = item[1]
+            if len(item)>1:
+                retval[item[0]] = item[1]
         return retval
 
     def update_tf_dep(self):
